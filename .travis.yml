@@ -1,0 +1,21 @@
+language: node_js
+
+node_js:
+  - '10'
+
+cache:
+  directories:
+    - ~/.npm
+    - node_modules
+  npm: true
+
+addons:
+  sonarcloud:
+    organization: ankeshgautam
+
+install:
+  - npm install
+
+script:
+  - npm run build
+  - sonar-scanner

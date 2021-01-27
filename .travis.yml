@@ -1,25 +1,16 @@
-dist: trusty
-os:
-  - linux
-
 language: node_js
 
 node_js:
-  - '14'
-
-cache:
-  directories:
-    - ~/.npm
-    - node_modules
-  npm: true
+  - node
 
 addons:
   sonarcloud:
     organization: ankeshgautam
 
-install:
-  - npm install
+# install:
+#   - npm install
 
 script:
   - npm run build
+  - npm run test
   - sonar-scanner

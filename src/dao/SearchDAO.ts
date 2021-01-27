@@ -9,7 +9,8 @@ export interface ISearchDao {
 class SearchDao implements ISearchDao {
 
     async getDistinctValue(columnName: string): Promise<QueryResult> {
-        return await client.query("SELECT DISTINCT " + columnName + " FROM public.audit_data");
+        const query = "SELECT DISTINCT " + columnName + " FROM public.audit_data";
+        return await client.query(query);
     }
 
     async getAuditByQuery(id: string, entity_id: string, entity_type: string, associated_id: string, associated_type: string, domain: string, sourceapplication: string, event: string, changes: string, userid: string, useridtype: string, usertype: string, startDateTime: string, endDateTime: string, pageNumber: number, pageSize: number): Promise<QueryResult> {

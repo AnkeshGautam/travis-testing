@@ -122,7 +122,7 @@ class SearchDao implements ISearchDao {
         }
         query = query + "ORDER BY A.changetimestamp LIMIT " + pageSize + " OFFSET " + (pageNumber - 1) * pageSize;
 
-        console.log(query);
+        // console.log(query);
         return await client.query(query);
     }
 

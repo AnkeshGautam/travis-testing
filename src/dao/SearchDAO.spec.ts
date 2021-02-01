@@ -59,7 +59,6 @@ describe("Search DAO", () => {
                 .then((result) => {
                     expect(result).has.property("rows");
                     expect(result.rows.length).to.equal(1);
-                    console.log(result);
                     done();
                 }).catch((err) => {
                     console.log("Error : ", err);

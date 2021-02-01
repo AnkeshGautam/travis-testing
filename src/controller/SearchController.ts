@@ -49,7 +49,7 @@ class SearchController implements ISearchController {
             const result = await this.searchDao.getAuditByQuery(id, entity_id, entity_type, associated_id, associated_type, domain, sourceapplication, event, changes, userid, useridtype, usertype, startDateTime, endDateTime, pageNumber, pageSize);
             const totalCount = result.rows.length;
             // console.log(result.rows);
-
+            console.log("Here");
             APIResponse.success(response, result.rows, totalCount, pageNumber, pageSize);
             return;
         } catch (error) {

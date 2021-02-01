@@ -53,6 +53,7 @@ class SearchController {
                 const result = yield this.searchDao.getAuditByQuery(id, entity_id, entity_type, associated_id, associated_type, domain, sourceapplication, event, changes, userid, useridtype, usertype, startDateTime, endDateTime, pageNumber, pageSize);
                 const totalCount = result.rows.length;
                 // console.log(result.rows);
+                console.log("am all the way up");
                 APIResponse_1.APIResponse.success(response, result.rows, totalCount, pageNumber, pageSize);
                 return;
             }
